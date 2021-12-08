@@ -1,4 +1,5 @@
 const navToggle = document.querySelector('.nav__toggle');
+const nav = document.querySelector('.nav');
 const portfolioContainer = document.querySelector('.portfolio__items');
 const menuButton = document.getElementById('menu__button');
 const form = document.querySelector('form');
@@ -41,6 +42,10 @@ const modalOpen = () => {
   modalElement.style.animation = 'modalIn 500ms forwards';
   modalElement.classList.add('modal--is--open');
   navToggle.style.display = 'none';
+  if (document.body.classList.contains('nav--open')) { // check if menu is open
+    menuHandler();
+  }
+
   document.body.style.overflowY = 'hidden';
 };
 
@@ -62,7 +67,7 @@ const modalClose = () => {
 
 // form section
 const submitFormHandler = (event) => {
-    event.preventDefault();
+  event.preventDefault();
 
   const name = userInputs[0].value;
   const email = userInputs[1].value;
