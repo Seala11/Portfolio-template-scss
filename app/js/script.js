@@ -61,8 +61,8 @@ const modalClose = () => {
 };
 
 // form section
-const submitFormHandler = () => {
-    // form.preventDefault();
+const submitFormHandler = (event) => {
+    event.preventDefault();
 
   const name = userInputs[0].value;
   const email = userInputs[1].value;
