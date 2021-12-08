@@ -8,13 +8,11 @@
 
 ## Check out the final website [here](https://portfolio-template-seala.pages.dev/)!
 
----
 
 Inspired by YouTube video series Kevin Powell [How to create a Website with CSS Grid & Sass](https://www.youtube.com/watch?v=dRuMoGNcJfw&list=PL4-IK0AVhVjNRKd4KBrXHpNtmMvR0qYz4).
 
 Active repo of the project on Kevin Powell GitHub [here](https://github.com/kevin-powell/portfolio-with-css-grid)
 
----
 
 ## Some changes I`ve made to the project:
 
