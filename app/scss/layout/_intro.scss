@@ -1,0 +1,48 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.intro {
+  display: flex;
+  color: rgba($white, 0.7);
+
+  h2 {
+    color: $white;
+
+    &::after {
+      content: '';
+      width: 20%;
+      height: 1px;
+      background: rgba($white, 0.5);
+      display: block;
+      margin: 1em auto 0;
+    }
+  }
+
+  @supports (display: grid) {
+    display: grid;
+    grid-template-columns: minmax(3em, 1fr) minmax(auto, 35em) minmax(3em, 1fr);
+
+    @include mq-max{
+      grid-template-columns: minmax(2em, 1fr) minmax(auto, 35em) minmax(2em, 1fr);
+    }
+  }
+
+  &__middle {
+    background: $dark-blue;
+    padding: 5em 5vw;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__left,
+  &__right {
+    img {
+      object-fit: cover;
+      min-height: 100%;
+      min-width: 100%;
+      display: block;
+    }
+  }
+}

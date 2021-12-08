@@ -1,0 +1,46 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../base/typography' as *;
+
+.social {
+  background-color: $dark-blue;
+  padding: 4em 0;
+  text-align: center;
+
+  p {
+    color: $white;
+  }
+
+  p:first-child {
+    margin-bottom: 2.2em;
+  }
+
+  &__copyright {
+    &::before {
+      content: '';
+      display: block;
+      height: 1px;
+      background: rgba($white, .15);
+      margin: 4em auto;
+      width: 25%;
+    }
+  }
+}
+
+.social__icons {
+  display: flex;
+  justify-content: space-between;
+  margin: 1.75em auto 4em;
+  @include container($max-width: 15em);
+
+  img {
+    width: 20%;
+    height: 20%;
+  }
+
+  img:hover {
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: lighten($dark-blue, 15%);
+  }
+}

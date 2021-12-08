@@ -1,0 +1,277 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../base/typography' as *;
+
+// portfolio item
+
+.portfolio {
+  text-align: center;
+  background: $light-gray;
+  padding: 5em 0;
+
+  &__image {
+    display: block;
+    width: 100%;
+  }
+
+  &__title {
+    color: $white;
+    font-size: 2rem;
+    margin-bottom: auto;
+
+    .featured & {
+      font-size: 3rem;
+    }
+  }
+
+  &__desc {
+    display: none; // only in grid
+  }
+
+  &__link {
+    color: $white;
+    font-weight: $fw-b;
+    font-size: 1.1rem;
+    text-decoration: none;
+    border-bottom: 2px solid $white;
+    align-self: flex-start;
+
+    &::after {
+      content: url('/app/img/arrow-white.svg');
+      display: inline-block;
+      width: 0.8em;
+      height: 0.8em;
+      margin-left: 0.5em;
+    }
+  }
+}
+
+// flexbox will work just in case grid won`t
+.portfolio__items {
+  display: flex;
+  flex-wrap: wrap;
+  @include container($max-width: 50em);
+}
+
+.portfolio__item {
+  position: relative;
+  overflow: hidden;
+  margin: auto; // added for flexbox
+  flex: 1 1 20rem;
+
+  figcaption {
+    position: absolute;
+    top: 100%;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: 1em;
+    background: rgba($blue, 0.75);
+    color: $white;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    transition: top ease-in-out 250ms;
+  }
+
+  &:hover figcaption,
+  &:focus figcaption {
+    top: 0;
+  }
+}
+
+// original grid layout
+@supports (display: grid) {
+  .portfolio__items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    // grid-template-columns: repeat(auto-fit, minmax(10em, 1fr)); => nice one, doesnt need media
+    //grid-gap: .5em;
+
+    @include mq-min {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .portfolio__item.featured {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+  }
+
+  .featured {
+    .portfolio__title {
+      font-size: 3rem;
+    }
+
+    .portfolio__desc {
+      display: block;
+    }
+  }
+}
+
+// portfolio modal components
+.portfolio__modal {
+  position: fixed;
+  z-index: 10;
+  top: 2em;
+  bottom: 2em;
+  left: 2em;
+  right: 2em;
+  background-color: $light-gray;
+  box-shadow: 0 0 0 5em rgba($dark-gray, 0.5);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  display: none;
+
+  @include mq-max($width: 50em) {
+    top: 1em;
+    bottom: 1em;
+    left: 1em;
+    right: 1em;
+  }
+
+  .modal__header {
+    background-size: cover;
+    background-position: center;
+    text-align: left;
+    padding: 5em 0;
+    margin-bottom: 2em;
+  }
+
+  .header__one {
+    background-image: url(/app/img/portfolio-01.jpg);
+  }
+
+  .header__two {
+    background-image: url(/app/img/portfolio-02.jpg);
+  }
+
+  .portfolio__title__box {
+    padding: 2em 1em;
+    background-color: rgba($blue, 0.75);
+    color: $white;
+    width: 70%;
+  }
+
+  .modal__title {
+    font-size: 3rem;
+    display: inline-block;
+
+    &::after {
+      content: '';
+      display: block;
+      height: 1px;
+      margin: 0.5em 0;
+      background-color: $white;
+      width: 100%;
+    }
+  }
+
+  .portfolio__content {
+    font-size: 1rem;
+    text-align: left;
+    width: 90%;
+    margin: 0 auto;
+    padding-bottom: 2em;
+  }
+
+  .portfolio--full--width {
+    width: 100vw;
+    max-width: initial;
+    margin: 2em calc(50% - 50vw);
+    height: 20vh;
+    object-fit: cover;
+  }
+}
+
+@include mq-min($width: 40em) {
+  .portfolio--pull--left {
+    width: 45%;
+    float: left;
+    margin-right: 1.5em;
+  }
+
+  .portfolio--pull--right {
+    width: 45%;
+    float: right;
+    margin-left: 1.5em;
+    padding-bottom: 2em;
+  }
+}
+
+// button component
+.portfolio__modal--close {
+  border: 0;
+  background: $light-gray;
+  width: 2.2rem;
+  height: 2.2rem;
+  position: fixed;
+  top: 4rem;
+  right: 4rem;
+  cursor: pointer;
+
+  @include mq-max($width: 50em) {
+    top: 2em;
+    right: 2em;
+  }
+}
+
+.close {
+  display: block;
+  position: relative;
+
+  &::before,
+  &::after {
+    width: 1.5em;
+    height: 2px;
+    background: $dark-gray;
+    transition: transform 350ms ease-in-out, opacity 200ms linear;
+    content: '';
+    position: absolute;
+    left: 0;
+  }
+
+  &::before {
+    top: -1px;
+    left: -1px;
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    top: -1px;
+    left: -1px;
+    transform: rotate(-45deg);
+  }
+
+  @include mq-min {
+    &::before,
+    &::after {
+      top: -2px;
+      left: -2px;
+    }
+  }
+}
+
+// js
+
+.modal--is--open {
+  display: block;
+}
+
+@keyframes modalIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes modalOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

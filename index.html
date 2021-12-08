@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/dist/style.css" />
+		<script src="/dist/script.js" defer></script>
+    <title>Portfolio</title>
+  </head>
+  <body>
+    <nav class="nav" id="nav">
+        <button class="menu__button nav__toggle" id="menu__button">
+          <span class="hamburger"></span>
+        </button>
+        <ul class="nav__list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="welcome" id="home">
+      <h1 class="welcome__header">Welcome to my<span>Portfolio</span></h1>
+    </div>
+    <section class="intro">
+      <div class="intro__left">
+        <img src="/app/img/welcome-01.png" alt="a laptop on a wood table" />
+      </div>
+      <div class="intro__middle">
+        <h2>Making it happen</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet
+          eleifend justo. Quisque non magna vel justo eleifend imperdiet
+        </p>
+      </div>
+      <div class="intro__right">
+        <img
+          src="/app/img/welcome-02.png"
+          alt="two computers and a laptop on a table"
+        />
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <img
+        class="about__img"
+        src="/app/img/joe-portfolio.png"
+        alt="A picture of Joe Portfolio"
+      />
+      <h1 class="about__title">Joe <br> Portfolio</h1>
+      <h2 class="about__subtitle">Designer & Developer</h2>
+      <div class="about__text">
+        <p>
+          Aenean mattis tristique elementum. Duis massa tellus, tempus non
+          fermentum at, venenatis et augue. Phasellus tristique purus sed
+          sagittis interdum. Duis luctus sapien justo, vel viverra ex convallis
+          et. Maecenas suscipit lacus ut lectus mattis ornare. Vestibulum
+          faucibus purus sit amet erat lobortis, tristique fringilla leo
+          sodales. Interdum et malesuada fames ac ante.
+        </p>
+        <p>
+          Aenean mattis tristique elementum. Duis massa tellus, tempus non
+          fermentum at, venenatis et augue. Phasellus tristique purus sed
+          sagittis interdum. Duis luctus sapien justo, vel viverra ex convallis
+          et. Maecenas suscipit lacus ut lectus mattis ornare. Vestibulum
+          faucibus purus sit amet erat lobortis, tristique fringilla leo
+          sodales. Interdum et malesuada fames ac ante.
+        </p>
+      </div>
+    </section>
+
+    <section class="portfolio" id="portfolio">
+      <h1>My work</h1>
+      <div class="portfolio__items">
+          
+        <!-- Portfolio item 1 -->
+        <figure class="portfolio__item featured">
+          <img
+            class="portfolio__image"
+            src="/app/img/portfolio-01.jpg"
+            alt="portfolio item"
+          />
+          <figcaption>
+            <h2 class="portfolio__title">Project Name</h2>
+            <p class="portfolio__desc">
+              A short description could go right here
+            </p>
+            <a href="#" class="portfolio__link">More info</a>
+          </figcaption>
+
+          <!-- Portfolio modal 1 -->
+          <div class="portfolio__modal modal" id="modal_1">
+            <button class="portfolio__modal--close" id="modal__button">
+              <span class="close"></span>
+          </button>
+            <div class="portfolio__header modal__header header__one">
+              <div class="portfolio__title__box">
+                <h2 class="portfolio__title modal__title">Project Name</h2>    
+                <p class="portfolio__subtitle modal__subtitle">Subtitle goes here</p>
+              </div>
+            </div> 
+            <!-- / portfolio-header -->
+            <div class="portfolio__content">
+              <p>Aenean mattis tristique elementum. Duis massa tellus, tempus non fermentum at, venenatis et augue. Phasellus tristique purus sed sagittis interdum. Duis luctus sapien justo, vel viverra ex convallis et. Maecenas suscipit lacus ut lectus mattis ornare. Vestibulum faucibus purus sit amet erat lobortis, tristique fringilla leo sodales. Interdum et malesuada fames ac ante.</p>
+              <img class="portfolio--full--width" src="/app/img/portfolio-01.jpg" alt="an image"> 
+              <p>Aenean mattis tristique elementum. Duis massa tellus, tempus non fermentum at, venenatis et augue. Phasellus tristique purus sed sagittis interdum. Duis luctus sapien justo, vel viverra ex convallis et. Maecenas suscipit lacus ut lectus mattis ornare. Vestibulum faucibus purus sit amet erat lobortis, tristique fringilla leo sodales. Interdum et malesuada fames ac ante.</p>
+              <p>Aenean mattis tristique elementum. Duis massa tellus, tempus non fermentum at, venenatis et augue. Phasellus tristique purus sed sagittis interdum. Duis luctus sapien justo, vel viverra ex convallis et. Maecenas suscipit lacus ut lectus mattis ornare. Vestibulum faucibus purus sit amet erat lobortis, tristique fringilla leo sodales. Interdum et malesuada fames ac ante.</p>
+              <img class="portfolio--pull--left" src="/app/img/portfolio-01.jpg" alt="an image"> 
+              <p>Aenean mattis tristique elementum. Duis massa tellus, tempus non fermentum at, venenatis et augue. Phasellus tristique purus sed sagittis interdum. Duis luctus sapien justo, vel viverra ex convallis et. Maecenas suscipit lacus ut lectus mattis ornare. Vestibulum faucibus purus sit amet erat lobortis, tristique fringilla leo sodales. Interdum et malesuada fames ac ante.</p>
+              <p>Aenean mattis tristique elementum. Duis massa tellus, tempus non fermentum at, venenatis et augue. Phasellus tristique purus sed sagittis interdum. Duis luctus sapien justo, vel viverra ex convallis et. Maecenas suscipit lacus ut lectus mattis ornare. Vestibulum faucibus purus sit amet erat lobortis, tristique fringilla leo sodales. Interdum et malesuada fames ac ante.</p>
+              <img class="portfolio--pull--right" src="/app/img/portfolio-01.jpg" alt="an image"> 
+            </div>
+          </div>
+          <!-- /modal -->
+
+        </figure>
+
+        <!-- Portfolio item 2 -->
+        <figure class="portfolio__item">
+            <img
+              class="portfolio__image"
+              src="/app/img/portfolio-02.jpg"
+              alt="portfolio item"
+            />
+            <figcaption>
+              <h2 class="portfolio__title">Project Name</h2>
+              <p class="portfolio__desc">
+                A short description could go right here
+              </p>
+              <a href="#" class="portfolio__link">More info</a>
+            </figcaption>
+
+            <!-- Portfolio modal 2-->
+          <div class="portfolio__modal modal" id="modal_2">
+            <button class="portfolio__modal--close" id="modal__button">
+              <span class="close"></span>
+            </button>
+            <div class="portfolio__header modal__header header__two">
+              <div class="portfolio__title__box">
+                <h2 class="portfolio__title modal__title">Project Name</h2>    
+                <p class="portfolio__subtitle modal__subtitle">Subtitle goes here</p>
+              </div>
+            </div> 
+            <!-- / portfolio-header -->
+            <div class="portfolio__content">
+              <p>Aenean mattis tristique elementum. Duis massa tellus, tempus non fermentum at, venenatis et augue. Phasellus tristique purus sed sagittis interdum. Duis luctus sapien justo, vel viverra ex convallis et. Maecenas suscipit lacus ut lectus mattis ornare. Vestibulum faucibus purus sit amet erat lobortis, tristique fringilla leo sodales. Interdum et malesuada fames ac ante.</p>
+              <img class="portfolio--full--width" src="/app/img/portfolio-02.jpg" alt="an image"> 
+              <p>Aenean mattis tristique elementum. Duis massa tellus, tempus non fermentum at, venenatis et augue. Phasellus tristique purus sed sagittis interdum. Duis luctus sapien justo, vel viverra ex convallis et. Maecenas suscipit lacus ut lectus mattis ornare. Vestibulum faucibus purus sit amet erat lobortis, tristique fringilla leo sodales. Interdum et malesuada fames ac ante.</p>
+              <p>Aenean mattis tristique elementum. Duis massa tellus, tempus non fermentum at, venenatis et augue. Phasellus tristique purus sed sagittis interdum. Duis luctus sapien justo, vel viverra ex convallis et. Maecenas suscipit lacus ut lectus mattis ornare. Vestibulum faucibus purus sit amet erat lobortis, tristique fringilla leo sodales. Interdum et malesuada fames ac ante.</p>
+              <img class="portfolio--pull--left" src="/app/img/portfolio-02.jpg" alt="an image"> 
+              <p>Aenean mattis tristique elementum. Duis massa tellus, tempus non fermentum at, venenatis et augue. Phasellus tristique purus sed sagittis interdum. Duis luctus sapien justo, vel viverra ex convallis et. Maecenas suscipit lacus ut lectus mattis ornare. Vestibulum faucibus purus sit amet erat lobortis, tristique fringilla leo sodales. Interdum et malesuada fames ac ante.</p>
+              <p>Aenean mattis tristique elementum. Duis massa tellus, tempus non fermentum at, venenatis et augue. Phasellus tristique purus sed sagittis interdum. Duis luctus sapien justo, vel viverra ex convallis et. Maecenas suscipit lacus ut lectus mattis ornare. Vestibulum faucibus purus sit amet erat lobortis, tristique fringilla leo sodales. Interdum et malesuada fames ac ante.</p>
+              <img class="portfolio--pull--right" src="/app/img/portfolio-02.jpg" alt="an image"> 
+              </div>
+          </div>
+          <!-- /modal -->
+          </figure>
+
+          <!-- Portfolio item 3 -->
+        <figure class="portfolio__item">
+            <img
+              class="portfolio__image"
+              src="/app/img/portfolio-03.jpg"
+              alt="portfolio item"
+            />
+            <figcaption>
+              <h2 class="portfolio__title">Project Name</h2>
+              <p class="portfolio__desc">
+                A short description could go right here
+              </p>
+              <a href="#" class="portfolio__link">More info</a>
+            </figcaption>
+          </figure>
+
+          <!-- Portfolio item 4 -->
+        <figure class="portfolio__item">
+            <img
+              class="portfolio__image"
+              src="/app/img/portfolio-04.jpg"
+              alt="portfolio item"
+            />
+            <figcaption>
+              <h2 class="portfolio__title">Project Name</h2>
+              <p class="portfolio__desc">
+                A short description could go right here
+              </p>
+              <a href="#" class="portfolio__link">More info</a>
+            </figcaption>
+          </figure>
+
+          <!-- Portfolio item 5 -->
+        <figure class="portfolio__item">
+            <img
+              class="portfolio__image"
+              src="/app/img/portfolio-05.jpg"
+              alt="portfolio item"
+            />
+            <figcaption>
+              <h2 class="portfolio__title">Project Name</h2>
+              <p class="portfolio__desc">
+                A short description could go right here
+              </p>
+              <a href="#" class="portfolio__link">More info</a>
+            </figcaption>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h1>Contact me</h1>
+        <form action="">
+          <label class="name" class="name">Name:
+              <input type="text" id="name">
+              <span class="error">*Required Field</span>
+          </label>
+          
+          <label class="email" class="email">Email:
+            <input type="email" id="email">
+            <span class="error">*Required Field</span>
+          </label>
+  
+          <label message="message" class="message">Message:
+            <textarea name="message" id="message"></textarea>
+            <span class="error">*Required Field</span>
+          </label>
+          
+          <button class="form__button" type="submit">SEND</button>
+  
+         </form>
+      </section>
+
+    <footer class="social">
+        <p>Follow me on social media</p>
+        <div class="social__icons">
+          <img class="social__icon" src="/app/img/twitter.svg" alt="twitter">
+          <img class="social__icon" src="/app/img/instagram.svg" alt="instagram">
+          <img class="social__icon" src="/app/img/github.svg" alt="github">      
+        </div>
+        <p class="social__copyright">Copyright 2021 Joe Portfolio</p>
+    </footer>
+  </div>
+  </body>
+
+</html>

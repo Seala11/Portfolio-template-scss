@@ -1,0 +1,41 @@
+
+@use '../abstracts/variables' as *;
+@use '../base/typography' as *;
+
+@mixin sans-serif($fs, $ls: .15em, $color: $dark-gray, $tt: uppercase, $lh: 1, $ff: $ff-ss, $fw: $fw-n) {
+  font-size: $fs;
+  letter-spacing: $ls;
+  color: $color;
+  text-transform: $tt;
+  line-height: $lh;
+  font-family: $ff;
+  font-weight: $fw;
+}
+
+
+@mixin container($width: 90%, $max-width: 50em) {
+  width: $width;
+  margin: 0 auto;
+  max-width: $max-width;
+}
+
+@mixin clearfix {
+  &::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+@mixin mq-min($width: 50em) {  // 800px
+  @media (min-width: $width) {
+    @content;
+  }
+}
+
+// to prevent overflow (h2 in intro)
+@mixin mq-max($width: 350px) {  // 300px
+  @media (max-width: $width) {
+    @content;
+  }
+}

@@ -1,0 +1,79 @@
+@use '../abstracts/mixins' as *;
+
+.about {
+  @include container;
+  @include clearfix;
+
+  // in case it doesn't support grid:
+  margin-top: 5em;
+  margin-bottom: 5em;
+
+  h1 {
+    @include mq-min {
+      margin-top: 0.2em;
+    }
+
+    @include mq-max($width: 50em) {
+      br {
+        display: none;
+      }
+    }
+  }
+
+  &__img {
+    @media (min-width: 40em) {
+      float: left;
+      margin-right: 1em;
+    }
+  }
+
+  &__title {
+    margin-bottom: 0.25em;
+  }
+
+  &__subtitle {
+    margin: 0.5em 0;
+  }
+
+  // original layout:
+  @supports (display: grid) {
+    display: grid;
+    grid-template-columns:
+      [port-start] minmax(11em, auto) [name-start] minmax(7em, auto)
+      [img-end] 2fr [port-end];
+    // [port-start] minmax(6em, 1fr) [name-start] minmax(6em, 1fr)
+    // [img-end] 2fr [port-end];
+    grid-column-gap: 0.5em;
+
+    @include mq-max($width: 600px) {
+      grid-template-columns:
+        [port-start] minmax(6em, 1fr) [name-start] minmax(6em, 1fr)
+        [img-end] 2fr [port-end];
+    }
+
+    &__img {
+      grid-column: port-start / img-end;
+      grid-row: 1 / 2;
+
+      @include mq-min {
+        grid-row: 1 / 4;
+      }
+    }
+
+    &__title {
+      grid-column: name-start / port-end;
+      grid-row: 1 / 2;
+      align-self: end;
+      margin-bottom: 0.5em;
+    }
+
+    &__subtitle,
+    &__text {
+      grid-column: port / port;
+
+      @include mq-min {
+        grid-column: img-end / port-end;
+      }
+    }
+  }
+}
