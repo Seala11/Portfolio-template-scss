@@ -9,7 +9,7 @@
 ## Check out the final website [here](https://portfolio-template-seala.pages.dev/)!
 
 
-Inspired by YouTube video series Kevin Powell [How to create a Website with CSS Grid & Sass](https://www.youtube.com/watch?v=dRuMoGNcJfw&list=PL4-IK0AVhVjNRKd4KBrXHpNtmMvR0qYz4).
+Inspired by YouTube video series of Kevin Powell [How to create a Website with CSS Grid & Sass](https://www.youtube.com/watch?v=dRuMoGNcJfw&list=PL4-IK0AVhVjNRKd4KBrXHpNtmMvR0qYz4).
 
 Active repo of the project on Kevin Powell GitHub [here](https://github.com/kevin-powell/portfolio-with-css-grid)
 
@@ -17,9 +17,9 @@ Active repo of the project on Kevin Powell GitHub [here](https://github.com/kevi
 ## Some changes I`ve made to the project:
 
 - Rewrite scss using @forward and @use
-- Different slide bar navifation menu
+- Different slide bar navigation menu
 - Button animation using css
-- Form validation js and css style
+- Form validation with js + css styles for it
 - Some other style/code changes as well
 
 ---
